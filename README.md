@@ -6,6 +6,6 @@ It is maintained by [thoso](https://github.com/thoso) under [MIT License](https:
 
 
 ### Credits
-* **Theme:** [Clean Blog](http://startbootstrap.com/template-overviews/clean-blog/) by [Start Bootstrap](http://startbootstrap.com/)
+* Theme [Clean Blog](http://startbootstrap.com/template-overviews/clean-blog/) by [Start Bootstrap](http://startbootstrap.com/)
 * [Unofficial GitHub Buttons](https://github.com/ntkme/github-buttons) by [ntkme](https://github.com/ntkme)
 * ["Fork me on GitHub" Ribbon](https://github.com/blog/273-github-ribbons) by [mojombo](https://github.com/mojombo)
