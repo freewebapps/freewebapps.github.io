@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="app">
 
 <head>
 
@@ -28,10 +28,14 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <!-- Angular -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
+    <script src="js/app.js"></script>
   
 </head>
 
-<body>
+<body ng-controller="SiteController">
 
     <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
@@ -55,109 +59,37 @@
         </div>
     </header>
 
-    <!-- Main Content -->
-    <div class="container">
+    <!-- Error message -->
+    <div class="container" ng-if="hasError">
         <div class="row">
-            <div class="col-md-7">
-                <a href="https://slides.com" target="_blank">
-                    <img class="img-responsive" src="img/sites/slides.jpg" alt="">
-                </a>
-            </div>
-            <div class="col-md-5">
-                <h3>Slides</h3>
-                <h4>Make better presentations</h4>
-                <p>Slides is a place for creating, presenting and sharing slide decks.</p>
-                <a class="btn btn-primary" href="https://slides.com" target="_blank">Visit site <span class="glyphicon glyphicon-chevron-right"></span></a>
-            </div>
-        </div>
-        <hr/>
-        <div class="row">
-            <div class="col-md-7">
-                <a href="https://pixlr.com" target="_blank">
-                    <img class="img-responsive" src="img/sites/pixlr.jpg" alt="">
-                </a>
-            </div>
-            <div class="col-md-5">
-                <h3>Pixlr</h3>
-                <h4>Photo editor online</h4>
-                <p>Work in layers, replace color, transform objects, and more - all from your browser.</p>
-                <a class="btn btn-primary" href="https://pixlr.com" target="_blank">Visit site <span class="glyphicon glyphicon-chevron-right"></span></a>
-            </div>
-        </div>
-        <hr/>
-        <div class="row">
-            <div class="col-md-7">
-                <a href="https://biteable.com" target="_blank">
-                    <img class="img-responsive" src="img/sites/biteable.jpg" alt="">
-                </a>
-            </div>
-            <div class="col-md-5">
-                <h3>Biteable</h3>
-                <h4>World’s Simplest Video Maker</h4>
-                <p>Make animation completely online in minutes.</p>
-                <a class="btn btn-primary" href="https://biteable.com" target="_blank">Visit site <span class="glyphicon glyphicon-chevron-right"></span></a>
-            </div>
-        </div>
-        <hr/>
-        <div class="row">
-            <div class="col-md-7">
-                <a href="https://web.skype.com" target="_blank">
-                    <img class="img-responsive" src="img/sites/skype.jpg" alt="">
-                </a>
-            </div>
-            <div class="col-md-5">
-                <h3>Skype for Web</h3>
-                <h4>Instant messaging</h4>
-                <p>Skype for Web is the easiest way to enjoy Skype’s features without downloading the app.</p>
-                <a class="btn btn-primary" href="https://web.skype.com" target="_blank">Visit site <span class="glyphicon glyphicon-chevron-right"></span></a>
-            </div>
-        </div>
-        <hr/>
-        <div class="row">
-            <div class="col-md-7">
-                <a href="https://codeanywhere.com" target="_blank">
-                    <img class="img-responsive" src="img/sites/codeanywhere.jpg" alt="">
-                </a>
-            </div>
-            <div class="col-md-5">
-                <h3>Codeanywhere</h3>
-                <h4>Cross Platform Cloud IDE</h4>
-                <p>Codeanywhere is a complete toolset for web development. Enabling you to edit, collaborate and run your projects from any device.</p>
-                <a class="btn btn-primary" href="https://codeanywhere.com" target="_blank">Visit site <span class="glyphicon glyphicon-chevron-right"></span></a>
-            </div>
-        </div>
-        <hr/>
-        <div class="row">
-            <div class="col-md-7">
-                <a href="https://clara.io" target="_blank">
-                    <img class="img-responsive" src="img/sites/clara.jpg" alt="">
-                </a>
-            </div>
-            <div class="col-md-5">
-                <h3>Clara.io</h3>
-                <h4>Online 3D Modeling</h4>
-                <p>Full-featured cloud-based 3D modeling, animation and rendering software tool that runs in your web browser.</p>
-                <a class="btn btn-primary" href="https://clara.io" target="_blank">Visit site <span class="glyphicon glyphicon-chevron-right"></span></a>
-            </div>
-        </div>
-        <hr/>
-        <div class="row">
-            <div class="col-md-7">
-                <a href="https://www.rollapp.com" target="_blank">
-                    <img class="img-responsive" src="img/sites/rollapp.jpg" alt="">
-                </a>
-            </div>
-            <div class="col-md-5">
-                <h3>rollApp</h3>
-                <h4>Desktop Applications on Any Device</h4>
-                <p>Apps cloud: all-in-one service to get things done. More than 180 apps of all kinds available on nearly any device.</p>
-                <a class="btn btn-primary" href="https://www.rollapp.com" target="_blank">Visit site <span class="glyphicon glyphicon-chevron-right"></span></a>
+            <div class="col-md-12">
+                <div class="alert alert-danger" role="alert">
+                    <strong>Oh noes!</strong> Something happened and it was not possible to fetch the data. Please try again.
+                </div>
             </div>
         </div>
     </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row" ng-repeat-start="item in sites">
+            <div class="col-md-7">
+                <a ng-href="item.url" target="_blank">
+                    <img class="img-responsive" ng-src="{{item.image}}" alt=""/>
+                </a>
+            </div>
+            <div class="col-md-5">
+                <h3>{{item.title}}</h3>
+                <h4>{{item.subtitle}}</h4>
+                <p>{{item.description}}</p>
+                <a class="btn btn-primary" ng-href="{{item.url}}" target="_blank">Visit site <span class="glyphicon glyphicon-chevron-right"></span></a>
+            </div>
+        </div>
+        <hr ng-repeat-end ng-hide="$last"/>
+    </div>
   
     <!-- Useful apps -->
-    <div class="container">
+    <div class="container" ng-if="other.length > 0">
         <div class="row">
             <div class="col-md-12">
                 <hr/>
@@ -165,24 +97,23 @@
                 <h4>These may need to be installed.</h4>
             </div>
         </div>
-    </div>
-    <div class="container">
-        <div class="row">
+        <div class="row" ng-repeat-start="item in other">
             <div class="col-md-7">
-                <a href="https://zeit.co/now" target="_blank">
-                    <img class="img-responsive" src="img/sites/now.jpg" alt="">
+                <a ng-href="item.url" target="_blank">
+                    <img class="img-responsive" ng-src="{{item.image}}" alt=""/>
                 </a>
             </div>
             <div class="col-md-5">
-                <h3>Now</h3>
-                <h4>Realtime global deployment</h4>
-                <p>Take your JavaScript (Node.js) or Docker powered websites, applications and services to the cloud with ease, speed and reliability.</p>
-                <a class="btn btn-primary" href="https://zeit.co/now" target="_blank">Visit site <span class="glyphicon glyphicon-chevron-right"></span></a>
+                <h3>{{item.title}}</h3>
+                <h4>{{item.subtitle}}</h4>
+                <p>{{item.description}}</p>
+                <a class="btn btn-primary" ng-href="{{item.url}}" target="_blank">Visit site <span class="glyphicon glyphicon-chevron-right"></span></a>
             </div>
         </div>
+        <hr ng-repeat-end ng-hide="$last"/>
     </div>
 
-    <hr>
+    <hr/>
 
     <!-- Footer -->
     <footer>
@@ -200,7 +131,7 @@
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57ffbdbbb2557e79"></script>
 
     <!-- Github Fork badge -->
-    <a href="https://github.com/freewebapps/freewebapps.github.io"><img style="position: fixed; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+    <a href="https://github.com/freewebapps/freewebapps.github.io" target="_blank"><img style="position: fixed; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
 
     <!-- Github Buttons -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>

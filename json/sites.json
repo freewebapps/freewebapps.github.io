@@ -1,0 +1,51 @@
+[
+  {
+    "title": "Slides",
+    "subtitle": "Make better presentations",
+    "description": "Slides is a place for creating, presenting and sharing slide decks.",
+    "url": "https://slides.com",
+    "image": "img/sites/slides.jpg"
+  },
+  {
+    "title": "Pixlr",
+    "subtitle": "Photo editor online",
+    "description": "Work in layers, replace color, transform objects, and more - all from your browser.",
+    "url": "https://pixlr.com",
+    "image": "img/sites/pixlr.jpg"
+  },
+  {
+    "title": "Biteable",
+    "subtitle": "World’s Simplest Video Maker",
+    "description": "Make animation completely online in minutes.",
+    "url": "https://biteable.com",
+    "image": "img/sites/biteable.jpg"
+  },
+  {
+    "title": "Skype for Web",
+    "subtitle": "Instant messaging",
+    "description": "Skype for Web is the easiest way to enjoy Skype’s features without downloading the app.",
+    "url": "https://web.skype.com",
+    "image": "img/sites/skype.jpg"
+  },
+  {
+    "title": "Codeanywhere",
+    "subtitle": "Cross Platform Cloud IDE",
+    "description": "Codeanywhere is a complete toolset for web development. Enabling you to edit, collaborate and run your projects from any device.",
+    "url": "https://codeanywhere.com",
+    "image": "img/sites/codeanywhere.jpg"
+  },
+  {
+    "title": "Clara.io",
+    "subtitle": "Online 3D Modeling",
+    "description": "Full-featured cloud-based 3D modeling, animation and rendering software tool that runs in your web browser.",
+    "url": "https://clara.io",
+    "image": "img/sites/clara.jpg"
+  },
+  {
+    "title": "rollApp",
+    "subtitle": "Desktop Applications on Any Device",
+    "description": "Apps cloud: all-in-one service to get things done. More than 180 apps of all kinds available on nearly any device.",
+    "url": "https://www.rollapp.com",
+    "image": "img/sites/rollapp.jpg"
+  }
+]
