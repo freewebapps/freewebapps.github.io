@@ -1,0 +1,9 @@
+[
+  {
+    "title": "Now",
+    "subtitle": "Realtime global deployment",
+    "description": "Take your JavaScript (Node.js) or Docker powered websites, applications and services to the cloud with ease, speed and reliability.",
+    "url": "https://zeit.co/now",
+    "image": "img/sites/now.jpg"
+  }
+]
