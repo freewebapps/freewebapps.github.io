@@ -1,5 +1,12 @@
 [
   {
+    "title": "ShortOrange",
+    "subtitle": "The Cloud Podcast Player",
+    "description": "With ShortOrange, you can access podcasts at any time, any place without an account.",
+    "url": "https://shortorange.com",
+    "image": "img/sites/shortorange.jpg"
+  },
+  {
     "title": "Slides",
     "subtitle": "Make better presentations",
     "description": "Slides is a place for creating, presenting and sharing slide decks.",
