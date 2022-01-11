@@ -2,7 +2,7 @@
 
 Free Web Apps, formely Organize.ml, is a list of free useful applications that runs online from your browser.
 
-It is maintained by [thoso](https://github.com/thoso) under [MIT License](https://github.com/freewebapps/freewebapps.github.io/blob/master/LICENSE).
+It is maintained by [thaispalmer](https://github.com/thaispalmer) under [MIT License](https://github.com/freewebapps/freewebapps.github.io/blob/master/LICENSE).
 
 
 ### Credits
